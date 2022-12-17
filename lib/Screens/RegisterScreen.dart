@@ -39,7 +39,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   "Add your phone number. We'll send you a verification code",
                   style: TextStyle(
                     fontSize: 14,
-                    color: Colors.black,
+                    color: Colors.black38,
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -47,7 +47,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   height: 20,
                 ),
                 TextFormField(
-                  controller: ,
+                  controller: phoneController,
+                  decoration: InputDecoration(
+                    hintText: "Enter Phone number",
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: const BorderSide(color: Colors.black12),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: const BorderSide(color: Colors.black12),
+                    ),
+                  ),
                 )
               ],
             ),
