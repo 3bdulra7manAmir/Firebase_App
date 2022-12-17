@@ -5,6 +5,25 @@ class RegisterScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: SafeArea(
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 35),
+            child: Column(
+              children: [
+                Container(
+                  width: 200,
+                  height: 200,
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle, color: Colors.purple.shade50),
+                  child: Image.asset("assets/images/image2.png"),
+                )
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }
