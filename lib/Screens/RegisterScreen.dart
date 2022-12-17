@@ -1,3 +1,4 @@
+import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -9,6 +10,11 @@ class RegisterScreen extends StatefulWidget {
 
 class _RegisterScreenState extends State<RegisterScreen> {
   final TextEditingController phoneController = TextEditingController();
+  
+
+  Country country = Country(phoneCode: phoneCode, countryCode: countryCode, e164Sc: e164Sc, geographic: geographic, level: level, name: name, example: example, displayName: displayName, displayNameNoCountryCode: displayNameNoCountryCode, e164Key: e164Key)
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,6 +65,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       borderRadius: BorderRadius.circular(10),
                       borderSide: const BorderSide(color: Colors.black12),
                     ),
+                    prefixIcon: Container(
+                      padding: const EdgeInsets.all(8.0),
+                      child: InkWell(
+                        onTap: (){
+
+                        },
+                        child: Text(),
+                      ),
+                    ),
+
                   ),
                 )
               ],
