@@ -47,6 +47,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   height: 20,
                 ),
                 TextFormField(
+                  cursorColor: Colors.purple,
                   controller: phoneController,
                   decoration: InputDecoration(
                     hintText: "Enter Phone number",
