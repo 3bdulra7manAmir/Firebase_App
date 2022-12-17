@@ -16,8 +16,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 35),
           child: Column(
-            children:
-            [
+            children: [
               Image.asset(
                 "assets/images/image1.png",
                 height: 300,
@@ -26,7 +25,18 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 height: 20,
               ),
               const Text("Let's Get Started",
-                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold))
+                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+              const SizedBox(
+                height: 10,
+              ),
+              const Text("Never a better time than now to start.",
+                  style: TextStyle(
+                      fontSize: 14,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold)),
+              const SizedBox(
+                height: 20,
+              ),
             ],
           ),
         ),
