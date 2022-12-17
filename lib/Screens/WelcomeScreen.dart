@@ -11,8 +11,26 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
+      body: SafeArea(
+          child: Center(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 35),
+          child: Column(
+            children:
+            [
+              Image.asset(
+                "assets/images/image1.png",
+                height: 300,
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              const Text("Let's Get Started",
+                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold))
+            ],
+          ),
+        ),
+      )),
     );
   }
-}
 }
