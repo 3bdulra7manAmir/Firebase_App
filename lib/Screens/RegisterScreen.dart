@@ -10,10 +10,18 @@ class RegisterScreen extends StatefulWidget {
 
 class _RegisterScreenState extends State<RegisterScreen> {
   final TextEditingController phoneController = TextEditingController();
-  
 
-  Country country = Country(phoneCode: phoneCode, countryCode: countryCode, e164Sc: e164Sc, geographic: geographic, level: level, name: name, example: example, displayName: displayName, displayNameNoCountryCode: displayNameNoCountryCode, e164Key: e164Key)
-
+  Country selectedCountry = Country(
+      phoneCode: "+20",
+      countryCode: "IN",
+      e164Sc: 0,
+      geographic: true,
+      level: 1,
+      name: "Egypt",
+      example: "Egypt",
+      displayName: "Egypt",
+      displayNameNoCountryCode: "IN",
+      e164Key: "");
 
   @override
   Widget build(BuildContext context) {
@@ -68,13 +76,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     prefixIcon: Container(
                       padding: const EdgeInsets.all(8.0),
                       child: InkWell(
-                        onTap: (){
-
+                        onTap: () {
+                          showCountryPicker(context: context, onSelect: (value)
+                          {
+                            
+                          });
                         },
-                        child: Text(),
+                        child: Text("${selectedCountry.flagEmoji} + ${selectedCountry.phoneCode}",
+                        style: const TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.bold ),
                       ),
                     ),
-
                   ),
                 )
               ],
