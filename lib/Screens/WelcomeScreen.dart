@@ -1,3 +1,4 @@
+import 'package:firebase/Widgets/CustomButton.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -37,6 +38,14 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               const SizedBox(
                 height: 20,
               ),
+              SizedBox(
+                width: double.infinity,
+                height: 50,
+                child: CustomButton(
+                  onPressed: () {},
+                  text: "Get started",
+                ),
+              )
             ],
           ),
         ),
