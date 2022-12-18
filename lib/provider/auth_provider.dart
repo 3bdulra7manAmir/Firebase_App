@@ -5,7 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthProvider extends ChangeNotifier {
   bool _isSignedIn = false;
-  bool get isSignedIn => isSignedIn;
+  bool get isSignedIn => _isSignedIn;
 
   AuthProvider() {
     checkSgin();
