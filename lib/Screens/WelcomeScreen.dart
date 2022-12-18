@@ -1,4 +1,5 @@
 import 'package:firebase/Screens/RegisterScreen.dart';
+import 'package:firebase/Screens/home_screen.dart';
 import 'package:firebase/Widgets/CustomButton.dart';
 import 'package:firebase/provider/auth_provider.dart';
 import 'package:flutter/material.dart';
@@ -49,11 +50,15 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 height: 50,
                 child: CustomButton(
                   onPressed: () {
-                    ap.isSignedIn == true ? Navigator.push(context, MaterialPageRoute(builder: (context) => ))
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const RegisterScreen()));
+                    ap.isSignedIn == true
+                        ? Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const HomeScreen()))
+                        : Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const RegisterScreen()));
                   },
                   text: "Get started",
                 ),
