@@ -1,5 +1,7 @@
+import 'package:firebase/provider/auth_provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'Screens/WelcomeScreen.dart';
 
 void main() async {
@@ -13,9 +15,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: WelcomeScreen(),
-      debugShowCheckedModeBanner: false,
+    return MultiProvider(
+      providers: [ChangeNotifierProvider(create: (_) => AuthProvider())],
+      child: const MaterialApp(
+        home: WelcomeScreen(),
+        debugShowCheckedModeBanner: false,
+      ),
     );
   }
 }
