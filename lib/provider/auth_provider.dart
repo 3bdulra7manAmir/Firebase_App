@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 
 import 'package:flutter/material.dart';
@@ -16,4 +17,12 @@ class AuthProvider extends ChangeNotifier {
     _isSignedIn = s.getBool("is_signedin") ?? false;
     notifyListeners();
   }
+
+void signInWithPhone(BuildContext context, String phoneNumber) async{
+  try{} on FirebaseAuthException catch(e){
+    
+  }
+}
+
+
 }
