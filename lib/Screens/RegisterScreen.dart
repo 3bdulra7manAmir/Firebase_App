@@ -1,6 +1,8 @@
 import 'package:country_picker/country_picker.dart';
 import 'package:firebase/Widgets/CustomButton.dart';
+import 'package:firebase/provider/auth_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class RegisterScreen extends StatefulWidget
 {
@@ -150,4 +152,14 @@ class _RegisterScreenState extends State<RegisterScreen>
       ),
     );
   }
+
+void sendPhoneNumber()
+{
+  final ap = Provider.of<AuthProvider>(context, listen: false;
+  String phoneNumber = phoneController.text.trim();
+  
+}
+
+
+
 }
