@@ -4,16 +4,14 @@ import 'package:firebase/provider/auth_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class RegisterScreen extends StatefulWidget
-{
+class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
 
   @override
   State<RegisterScreen> createState() => _RegisterScreenState();
 }
 
-class _RegisterScreenState extends State<RegisterScreen>
-{
+class _RegisterScreenState extends State<RegisterScreen> {
   final TextEditingController phoneController = TextEditingController();
 
   Country selectedCountry = Country(
@@ -48,8 +46,7 @@ class _RegisterScreenState extends State<RegisterScreen>
                       shape: BoxShape.circle, color: Colors.purple.shade50),
                   child: Image.asset("assets/images/image2.png"),
                 ),
-                const SizedBox
-                (
+                const SizedBox(
                   height: 20,
                 ),
                 const Text("Let's Get Started",
@@ -139,12 +136,12 @@ class _RegisterScreenState extends State<RegisterScreen>
                 const SizedBox(
                   height: 20,
                 ),
-                SizedBox
-                (
+                SizedBox(
                   width: double.infinity,
                   height: 50,
-                  child: CustomButton(text: "Login", onPressed: () {},),
-                )
+                  child: CustomButton(
+                      text: "Login", onPressed: () => sendPhoneNumber()),
+                ),
               ],
             ),
           ),
@@ -153,13 +150,9 @@ class _RegisterScreenState extends State<RegisterScreen>
     );
   }
 
-void sendPhoneNumber()
-{
-  final ap = Provider.of<AuthProvider>(context, listen: false;
-  String phoneNumber = phoneController.text.trim();
-  
-}
-
-
-
+  void sendPhoneNumber() {
+    final ap = Provider.of<AuthProvider>(context, listen: false);
+    String phoneNumber = phoneController.text.trim();
+    ap.signInWithPhone(context, "+${selectedCountry.phoneCode}$phoneNumber");
+  }
 }
