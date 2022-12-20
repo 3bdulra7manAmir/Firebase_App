@@ -1,3 +1,4 @@
+import 'package:firebase/Screens/User_Information_Screen.dart';
 import 'package:firebase/Widgets/CustomButton.dart';
 import 'package:firebase/utils/utils.dart';
 import 'package:flutter/material.dart';
@@ -81,7 +82,7 @@ class _OTPScreenState extends State<OTPScreen> {
                                   fontSize: 20,
                                   fontWeight: FontWeight.w600,
                                 )),
-                            onSubmitted: (value) {
+                            onCompleted: (value) {
                               setState(() {
                                 otpCode = value;
                               });
@@ -136,10 +137,15 @@ class _OTPScreenState extends State<OTPScreen> {
       onSuccess: () {
         //checking whether user exits in the db
         ap.checkExistingUser().then((value) async {
-          if(value == true){
+          if (value == true) {
             //user exists on our app
-          }else{
+          } else {
             //new user
+            Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const UserInformationScreen()),
+                (route) => false);
           }
         });
       },
