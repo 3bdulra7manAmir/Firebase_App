@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:firebase/Widgets/CustomButton.dart';
+import 'package:firebase/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -87,12 +88,16 @@ class _UserInformationScreenState extends State<UserInformationScreen> {
                     ],
                   ),
                 ),
-                const SizedBox(height: 20,),
-                SizedBox
-                (
+                const SizedBox(
+                  height: 20,
+                ),
+                SizedBox(
                   height: 50,
                   width: MediaQuery.of(context).size.width * 0.80,
-                  child: CustomButton(text: "Continue", onPressed: (){},),
+                  child: CustomButton(
+                    text: "Continue",
+                    onPressed: () {},
+                  ),
                 ),
               ],
             ),
@@ -138,8 +143,10 @@ class _UserInformationScreenState extends State<UserInformationScreen> {
           fillColor: Colors.purple.shade50,
           filled: true,
         ),
-    ),);
+      ),
+    );
   }
+
 // store user data to database
   void storeData() async {
     final ap = Provider.of<AuthProvider>(context, listen: false);
@@ -175,4 +182,3 @@ class _UserInformationScreenState extends State<UserInformationScreen> {
     }
   }
 }
-
